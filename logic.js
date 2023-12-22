@@ -1,6 +1,25 @@
 let recipes_div = document.getElementById("recipe_results");
 let id;
 
+function toggle(title_str, instructions_str){
+    const recipe_info = document.getElementById("recipe_info");
+    const isHidden = recipe_info?.classList?.contains("hidden");
+    if(isHidden){
+        recipe_info?.classList?.remove("hidden");
+        recipe_info.classList.add("open")
+        const meal_Title = document.getElementById("meal_Title");
+        meal_Title.innerText = "Burek";
+        meal_Title.innerText = title_str;
+
+        const instructions = document.getElementById("instructions");
+        instructions.innerText = instructions_str
+    }
+    else{
+        recipe_info?.classList?.add("hidden");
+        recipe_info.classList.remove("open")
+    }
+}
+
 
 //2. get the data from DB
 async function searchRecipes(name){
@@ -52,8 +71,16 @@ function appendRecipes(recipes){
         link.href = el.strYoutube;
         link.target = "_blank"
 
+        const button = document.createElement("button")
+        button.innerText = "View Recipe";
+        button.className = "view_recipe"
+        
+        button.addEventListener("click", function(){
+            toggle(el.strMeal, el.strInstructions);
+        })
+
         let div = document.createElement("div");
-        div.append(meal_image, meal_name, tag_name, link)
+        div.append(meal_image, meal_name, tag_name, link, button)
 
         recipes_div.append(div)
 
