@@ -13,7 +13,8 @@ async function searchRecipes(name){
         return data.meals;
 
     } catch (error) {
-        console.log("error:", error)
+        console.log("error:", error);
+        
         
     }
 
@@ -24,8 +25,16 @@ async function searchRecipes(name){
 function appendRecipes(recipes){
     recipes_div.innerHTML = null;
 
-    if (recipes === undefined){
-        return false;
+    if (recipes === null){
+        // return false;
+        // let container= document.getElementById("recipe_results")
+        let not_aval = document.createElement("h2");
+        not_aval.innerText = "Uh-oh! Seems like this recipe is not available here :(";
+
+        let not_aval_img = document.createElement("img");
+        not_aval_img.src = "https://static.vecteezy.com/system/resources/previews/026/776/277/original/cute-sad-pizza-character-funny-unhappy-pie-cartoon-emoticon-in-flat-style-food-emoji-illustration-vector.jpg"
+        recipes_div.append(not_aval, not_aval_img)
+        
     }
 
     recipes.forEach(function(el){
