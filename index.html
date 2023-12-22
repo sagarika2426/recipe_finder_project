@@ -67,13 +67,14 @@
         background-color: beige;
     }
 
-    a{
+    a {
         /* border: 1px solid black; */
         padding: 8px 15px;
         text-decoration: none;
         border-radius: 10px;
         color: white;
         background-color: rgb(150, 0, 0);
+        border: 0px;
         
     }
     #namelogo>h1{
@@ -99,6 +100,99 @@
         color: red;
         text-align: center;
     }
+
+    #recipe_info{
+        color: black;
+        background-color: orange;
+        border-radius: 10px;
+
+    }
+
+    #recipe_info{
+        font-size: x-large;
+    }
+
+    #recipe_info> div> p + div{
+        padding: 10px;
+    }
+
+    #recipe_info> div> p{
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    .hidden{
+        visibility: hidden;
+        display: none;
+    }
+
+    .visible{
+        visibility: visible;
+        display: block;
+    }
+
+    .open {
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #000000b8 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+ 
+    #meal_title {
+        text-align: center;
+        text-transform: capitalize;
+        font-weight: bold;
+        line-height: 20px;
+    }
+ 
+    #recipe_card {
+        background: #ffe3a1;
+        border-radius: 16px;
+        width: 480px;
+        margin: auto;
+        padding: 10px;
+    }
+ 
+    #instructions {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        margin-bottom: 10px;
+        font-size: large;
+        text-align: justify;
+    }
+ 
+    #close_div {
+        display: flex;
+        justify-content: end;
+        padding: 10px;
+    }
+    #close_btn{
+        background-color: #9f0101;
+        border-radius: 16px;
+        padding: 5px 10px;
+        border: 0px;
+        color: white;
+    }
+    .view_recipe{
+        /* border: 1px solid black; */
+        padding: 9px 16px;
+        text-decoration: none;
+        border-radius: 10px;
+        color: white;
+        background-color: rgb(1 77 27);
+        border: 0px;
+        margin-left: 10px;
+        
+    }
+
+  
 
     /* for phone */
     @media all and (min-width: 80px) and (max-width:450px){
@@ -155,6 +249,19 @@
         <input type="text" id="recipe_query" oninput="debounceFn(main, 1000)" placeholder="Search Recipe"/>
     </div>
     <div id="mainbox">
+        <!-- <button onclick="toggle(`cake`, `eggs, sweet, vanilla, almonds` )"> Show/Hide Info</button> -->
+        <!-- <button onclick="toggle(`icecream`, `eggs, sweet, vanilla, almonds` )"> Show/Hide Info</button> -->
+        
+            <section id="recipe_info" class=" hidden open">
+                <div id="recipe_card">
+                    <div id="close_div">
+                        <button id="close_btn" onclick="toggle()">Close</button>
+                    </div>
+                <p id="meal_Title">Recipeeeeeeee</p>
+                <div id="instructions">"random"</div>
+            </div>
+            </section>
+    
         <h3>Search Dish Name To Get The Recipe! </h1>
         <!-- Show this when tha page is emptry -->
         <div id="recipe_results">
@@ -165,6 +272,10 @@
 
 
     <script src="logic.js"></script>
+    <script>
+             
+   
+    </script>
     
 </body>
 </html>
