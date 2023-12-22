@@ -48,6 +48,7 @@
 
     img{
         width: 280px;
+        text-align: center;
     }
 
     input{
@@ -75,13 +76,13 @@
         background-color: rgb(150, 0, 0);
         
     }
-    h1{
+    #namelogo>h1{
         text-align: center;
         color: purple;
         margin-left: 430px;
         margin-top: 20px;
     }
-    h2{
+    h3{
         text-align: center;
     }
     #namelogo>img{
@@ -94,6 +95,10 @@
         padding-left: 50px;
         margin-bottom: -30px;
     }
+    h2{
+        color: red;
+        text-align: center;
+    }
 
     /* for phone */
     @media all and (min-width: 80px) and (max-width:450px){
@@ -105,9 +110,6 @@
         /* gap: 20px 40px; */
         text-align: center;
         }
-
-        img{
-        width: 180px;
     }
     #mainbox>div>div{
         padding-bottom: 20px;
@@ -123,7 +125,7 @@
         height: 50px;
         margin-top: 5px;
     }
-    h1{
+    #namelogo>h1{
     margin-left: 20px;
     margin-top: 10px;
     }
@@ -131,6 +133,12 @@
       margin-top: 30px;
       
     }
+    h2+img{
+        padding: 50px;
+        margin-top: -30px;
+
+    }
+
 
 
     }
@@ -147,7 +155,7 @@
         <input type="text" id="recipe_query" oninput="debounceFn(main, 1000)" placeholder="Search Recipe"/>
     </div>
     <div id="mainbox">
-        <h2>Search Dish Name To Get The Recipe! </h1>
+        <h3>Search Dish Name To Get The Recipe! </h1>
         <!-- Show this when tha page is emptry -->
         <div id="recipe_results">
            
